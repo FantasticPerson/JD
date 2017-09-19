@@ -1,3 +1,5 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <user-center></user-center>
+  <mod-recommend></mod-recommend>
+  <mod-add [(data)]="cModToBuy" *ngIf="showModAddPanel()"></mod-add>
+</div>

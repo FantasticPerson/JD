@@ -4,17 +4,28 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { UserCenterComponent } from './user-center/user-center.component';
+import { ModRecommendComponent } from './mod-recommend/mod-recommend.component';
+import { ModItemComponent } from './mod-recommend/mod-item/mod-item.component';
+import { ModAddComponent } from './mod-add/mod-add.component';
+import { EventBusService } from './server/event-bus.service';
+import { NumberPickerComponent } from './number-picker/number-picker.component'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserCenterComponent,
+    ModRecommendComponent,
+    ModItemComponent,
+    ModAddComponent,
+    NumberPickerComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [EventBusService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

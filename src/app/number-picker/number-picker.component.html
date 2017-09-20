@@ -1,7 +1,7 @@
-<div class="container">
-  <span class="minus"></span>
+<div [ngClass]="getClassName()">
+  <span class="minus" (click)="onMinusClick()"></span>
   <div>
-    <input>
+    <input [value]="number">
   </div>
-  <span class="add"></span>
+  <span class="add" (click)="onAddClick()"></span>
 </div>

@@ -140,16 +140,13 @@ export class ModRecommendComponent implements OnInit {
       }
     }
   ];
+
   constructor(public eventServiceBus:EventBusService) { }
 
   ngOnInit() {
-    this.eventServiceBus.eventBus.subscribe((value)=>{
-      let item = this.modItemArr.find((item)=>{
-        return item.imgSrc == value.imgSrc;
-      });
-      let index = this.modItemArr.indexOf(item);
-      this.modItemArr.splice(index,1);
-    })
   }
 
+  public onModAdded(data):void{
+    console.log(data);
+  }
 }

@@ -9,7 +9,9 @@ import { ModRecommendComponent } from './mod-recommend/mod-recommend.component';
 import { ModItemComponent } from './mod-recommend/mod-item/mod-item.component';
 import { ModAddComponent } from './mod-add/mod-add.component';
 import { EventBusService } from './server/event-bus.service';
-import { NumberPickerComponent } from './number-picker/number-picker.component'
+import { NumberPickerComponent } from './number-picker/number-picker.component';
+import { ModEditComponent } from './mod-edit/mod-edit.component';
+import { ModAddressComponent } from './mod-address/mod-address.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { NumberPickerComponent } from './number-picker/number-picker.component'
     ModRecommendComponent,
     ModItemComponent,
     ModAddComponent,
-    NumberPickerComponent
+    NumberPickerComponent,
+    ModEditComponent,
+    ModAddressComponent
   ],
   imports: [
     BrowserModule,

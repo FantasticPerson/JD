@@ -4,7 +4,7 @@
       <img [src]="data.imgSrc">
       <p class="price">{{'￥'+data.price}}</p>
       <p class="prop"><span>已选</span>金，32GB 1个</p>
-      <i class="close"></i>
+      <i class="close" (click)="onCloseClick()"></i>
     </div>
     <div class="body">
       <div class="attr">
@@ -17,11 +17,11 @@
       </div>
       <div class="count-choose">
         <div class="num-container">
-          <number-picker></number-picker>
+          <number-picker [(className2)]="addClass" [(number)]="number"></number-picker>
         </div>
         <p class="count">数量</p>
       </div>
     </div>
-    <div class="btn"></div>
+    <div class="btn" (click)="onSubmitClick()">加入购物车</div>
   </div>
 </div>

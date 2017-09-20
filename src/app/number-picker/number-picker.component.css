@@ -1,7 +1,7 @@
 .container{
     position: relative;
     display: block;
-    width: 100px;
+    width: 104px;
     border-radius: 3px;
     overflow: hidden;
 }
@@ -85,4 +85,24 @@
 .disable::before,
 .disable:after{
     background: #ccc;
+}
+
+.withBorder .minus{
+    background: #f3f2f8;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-color: #ccc;
+    border: 1px solid #e5e5e5;
+}
+
+.withBorder .add{
+    background: #f3f2f8;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-color: #ccc;    
+    border: 1px solid #e5e5e5;
+}
+.withBorder input{
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
 }

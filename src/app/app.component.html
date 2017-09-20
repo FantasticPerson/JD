@@ -1,5 +1,6 @@
 <div class="container">
+  <mod-address></mod-address>
   <user-center></user-center>
   <mod-recommend></mod-recommend>
-  <mod-add [(data)]="cModToBuy" *ngIf="showModAddPanel()"></mod-add>
+  <mod-add (eventEmmiter)="eventFromModAdd($event)" [(data)]="cModToBuy" *ngIf="showModAddPanel()"></mod-add>
 </div>

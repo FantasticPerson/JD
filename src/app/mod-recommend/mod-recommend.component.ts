@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { EventBusService } from '../server/event-bus.service'
 
 @Component({
@@ -7,6 +7,10 @@ import { EventBusService } from '../server/event-bus.service'
   styleUrls: ['./mod-recommend.component.css']
 })
 export class ModRecommendComponent implements OnInit {
+
+
+  @Input() public toBuyList:Array<any>;
+  public itemArr:Array<any> = [];
 
   public modItemArr:Array<any> = [
     {
@@ -20,7 +24,8 @@ export class ModRecommendComponent implements OnInit {
           '程序开发心理学',
           '颠覆完美软件'
         ]
-      }
+      },
+      weight:'1.2'
     },
     {
       price:99.00,
@@ -33,7 +38,8 @@ export class ModRecommendComponent implements OnInit {
           '程序开发心理学',
           '颠覆完美软件'
         ]
-      }
+      },
+      weight:'1.4'
     },
     {
       price:'19.90',
@@ -46,7 +52,8 @@ export class ModRecommendComponent implements OnInit {
           '程序开发心理学',
           '颠覆完美软件'
         ]
-      }
+      },
+      weight:'1.0'
     },
     {
       price:'35.90',
@@ -59,7 +66,8 @@ export class ModRecommendComponent implements OnInit {
           '程序开发心理学',
           '颠覆完美软件'
         ]
-      }
+      },
+      weight:'1.8'
     },
     {
       price:'49.90',
@@ -72,7 +80,8 @@ export class ModRecommendComponent implements OnInit {
           '程序开发心理学',
           '颠覆完美软件'
         ]
-      }
+      },
+      weight:'5.2'
     },
     {
       price:'52.50',
@@ -85,7 +94,8 @@ export class ModRecommendComponent implements OnInit {
           '程序开发心理学',
           '颠覆完美软件'
         ]
-      }
+      },
+      weight:'8.2'
     },
     {
       price:'55.00',
@@ -98,7 +108,8 @@ export class ModRecommendComponent implements OnInit {
           '程序开发心理学',
           '颠覆完美软件'
         ]
-      }
+      },
+      weight:'1.7'
     },
     {
       price:'15.90',
@@ -111,7 +122,8 @@ export class ModRecommendComponent implements OnInit {
           '程序开发心理学',
           '颠覆完美软件'
         ]
-      }
+      },
+      weight:'3.2'
     },
     {
       price:'39.90',
@@ -124,7 +136,8 @@ export class ModRecommendComponent implements OnInit {
           '程序开发心理学',
           '颠覆完美软件'
         ]
-      }
+      },
+      weight:'2.2'
     },
     {
       price:'3399.00',
@@ -137,16 +150,35 @@ export class ModRecommendComponent implements OnInit {
           '程序开发心理学',
           '颠覆完美软件'
         ]
-      }
+      },
+      weight:'5.2'
     }
   ];
 
-  constructor(public eventServiceBus:EventBusService) { }
+  constructor(public eventServiceBus:EventBusService) { 
+    console.log('sdafa')
+  }
 
   ngOnInit() {
   }
 
+  ngDoCheck() {
+    this.itemArr=[];
+    for(let i = 0;i<this.modItemArr.length;i++){
+      let item = this.toBuyList.find((item)=>{
+        return item.imgSrc == this.modItemArr[i].imgSrc;
+      })
+      if(!item){
+        this.itemArr.push(this.modItemArr[i]);
+      }
+    }
+  }
+
   public onModAdded(data):void{
     console.log(data);
+  }
+
+  public getData(item):any{
+    return item;
   }
 }

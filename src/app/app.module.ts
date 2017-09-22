@@ -11,7 +11,8 @@ import { ModAddComponent } from './mod-add/mod-add.component';
 import { EventBusService } from './server/event-bus.service';
 import { NumberPickerComponent } from './number-picker/number-picker.component';
 import { ModEditComponent } from './mod-edit/mod-edit.component';
-import { ModAddressComponent } from './mod-address/mod-address.component'
+import { ModAddressComponent } from './mod-address/mod-address.component';
+import { ModCountComponent } from './mod-count/mod-count.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ModAddressComponent } from './mod-address/mod-address.component'
     ModAddComponent,
     NumberPickerComponent,
     ModEditComponent,
-    ModAddressComponent
+    ModAddressComponent,
+    ModCountComponent
   ],
   imports: [
     BrowserModule,

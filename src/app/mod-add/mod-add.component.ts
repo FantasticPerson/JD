@@ -29,10 +29,13 @@ export class ModAddComponent implements OnInit {
   public onSubmitClick(){
     let number = this.numberPickComponent.getNumber();
     this.data.number = number;
+    this.data.picked = true;
     this.eventEmmiter.emit({type:'submit',data:this.data});
   }
 
   public onCloseClick(){
     this.eventEmmiter.emit({type:'close',data:{}})
   }
+
+ 
 }
